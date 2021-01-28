@@ -6,7 +6,7 @@ public class TriggerLine1 : MonoBehaviour
 {
     //public GameObject player; //have to figure out how to find player-collider and then replace it with it
     public bool crossedTriggerLine = false; // for now this is public - just for debug options
-    public Collider colliderObj;
+    public Transform player;
 
 
     //for spotlights
@@ -46,17 +46,17 @@ public class TriggerLine1 : MonoBehaviour
             light.intensity = lightIntesityValue;
         }
     }
-    private void OnTriggerEnter(Collider other) //use that later to activate all stuff
+    /*private void OnTriggerEnter(Collider other) //use that later to activate all stuff
     {
         if (other == colliderObj)
         {
             crossedTriggerLine = true;
         }
-    }
+    }*/
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q)) //just to test
+        if (Input.GetKeyDown(KeyCode.Q) || player.position.z < transform.position.z) //just to test
         {
             crossedTriggerLine = true;
         }
