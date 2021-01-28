@@ -40,19 +40,13 @@ public class TriggerLine1 : MonoBehaviour
     }
     private void Start()
     {
+        lightGoesOn = true;
         lightIntesityValue = minLightIntesity;
         foreach (Light light in spotLights)
         {
             light.intensity = lightIntesityValue;
         }
     }
-    /*private void OnTriggerEnter(Collider other) //use that later to activate all stuff
-    {
-        if (other == colliderObj)
-        {
-            crossedTriggerLine = true;
-        }
-    }*/
 
     public void Update()
     {
@@ -68,7 +62,7 @@ public class TriggerLine1 : MonoBehaviour
             AudioFunction();
 
             Debug.Log("Trigger line crossed"); //test
-            gameObject.GetComponent<Collider>().enabled = false; //so that we can't activate it more then once - not necessary due to lightGoesOn bool, but maybe later will be needed
+            //gameObject.GetComponent<Collider>().enabled = false; //so that we can't activate it more then once - not necessary due to lightGoesOn bool, but maybe later will be needed
         }
     }
 
