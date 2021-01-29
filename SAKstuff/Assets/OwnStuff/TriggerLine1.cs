@@ -25,7 +25,13 @@ public class TriggerLine1 : MonoBehaviour
 
     //for animation
     [Header("Animation")]
-    public bool startSAKAppearAnimation = false;
+    public CapsulePosition Capsule;
+    public float timeUntilSAK = 1f;
+
+    //for Hatch 
+    [Header("Animation Hatch")]
+    public PedestelDoor hatch;
+    public float timeUntilHatch = 1f;
     //here will be the data for the animation part
 
     //for music/sound
@@ -58,7 +64,9 @@ public class TriggerLine1 : MonoBehaviour
         if (crossedTriggerLine)
         {
             SpotLightFunction(); //here is the whole code that modifies the light
-            AnimationFunction();
+            Invoke("AnimationFunction", timeUntilSAK);
+            Invoke("HatchFunction", timeUntilHatch);
+            //AnimationFunction();
             AudioFunction();
 
             Debug.Log("Trigger line crossed"); //test
@@ -68,9 +76,15 @@ public class TriggerLine1 : MonoBehaviour
 
     void AnimationFunction()
     {
-        startSAKAppearAnimation = true;
+        Capsule.activate = true;
         Debug.Log("SAK appear animation can start");
     }
+
+    void HatchFunction()
+    {
+        hatch.activatePed = true;
+    }
+
     void AudioFunction()
     {
         startTheSAKAppearAudio = true;

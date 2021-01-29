@@ -1,19 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 public class KnifeOpener : MonoBehaviour
 {
     public Animator animator;
-
-    void Update()
+   
+    public void OncustomedButton ()
     {
-        // ask animator state then change it to another state and then set it and store it again.
-        if(Input.GetKeyDown(KeyCode.O))
-        {
-            bool open = animator.GetBool("open");
-            open = !open;
-            animator.SetBool("open", open);
-        }
+        Debug.Log("test");
     }
+    public void OnPress(Handheld hand)
+    {
+        bool open = animator.GetBool("open");
+        open = !open;
+        animator.SetBool("open", open);
+        Debug.Log("Button pressed");
+    }
+
 }

@@ -11,36 +11,37 @@ public class CapsulePosition : MonoBehaviour
     [Tooltip("Ascending speed of the knife")]
     public float speed = 1f;
     public float rotationSpeed = 1f;
+    public float endPosition = -1.106f;
 
-    private new Rigidbody rigidbody;
+    //private new Rigidbody rigidbody;
 
-    void Awake()
-    {
-        rigidbody = GetComponent<Rigidbody>();
-    }
+    //void Awake()
+    //{
+    //    rigidbody = GetComponent<Rigidbody>();
+    //}
 
     
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            rigidbody.AddTorque(0, rotationSpeed, 0);
-        }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            rigidbody.AddTorque(0, -rotationSpeed, 0);
-        }
+        //if(Input.GetKeyDown(KeyCode.LeftArrow))
+        //{
+        //    rigidbody.AddTorque(0, rotationSpeed, 0);
+        //}
+        //else if (Input.GetKeyDown(KeyCode.RightArrow))
+        //{
+        //    rigidbody.AddTorque(0, -rotationSpeed, 0);
+        //}
 
         if (activate)
         {
-            if (transform.position.y <= 12f)
+            if (transform.position.y <= endPosition)
             {
-                rigidbody.isKinematic = true;
+                //rigidbody.isKinematic = true;
                 transform.position += new Vector3(0, speed * Time.deltaTime, 0);
             }
             else
             {
-                rigidbody.isKinematic = false;
+                //rigidbody.isKinematic = false;
             }
         }
     }
