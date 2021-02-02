@@ -14,14 +14,14 @@ namespace Valve.VR
     using UnityEngine;
     
     
-    public class SteamVR_Input_ActionSet_SwissArmyKnifeUI : Valve.VR.SteamVR_ActionSet
+    public class SteamVR_Input_ActionSet_default : Valve.VR.SteamVR_ActionSet
     {
         
         public virtual SteamVR_Action_Boolean InteractUI
         {
             get
             {
-                return SteamVR_Actions.swissArmyKnifeUI_InteractUI;
+                return SteamVR_Actions.default_InteractUI;
             }
         }
         
@@ -29,7 +29,7 @@ namespace Valve.VR
         {
             get
             {
-                return SteamVR_Actions.swissArmyKnifeUI_Teleport;
+                return SteamVR_Actions.default_Teleport;
             }
         }
         
@@ -37,7 +37,7 @@ namespace Valve.VR
         {
             get
             {
-                return SteamVR_Actions.swissArmyKnifeUI_GrabPinch;
+                return SteamVR_Actions.default_GrabPinch;
             }
         }
         
@@ -45,7 +45,7 @@ namespace Valve.VR
         {
             get
             {
-                return SteamVR_Actions.swissArmyKnifeUI_GrabGrip;
+                return SteamVR_Actions.default_GrabGrip;
             }
         }
         
@@ -53,7 +53,7 @@ namespace Valve.VR
         {
             get
             {
-                return SteamVR_Actions.swissArmyKnifeUI_Pose;
+                return SteamVR_Actions.default_Pose;
             }
         }
         
@@ -61,7 +61,7 @@ namespace Valve.VR
         {
             get
             {
-                return SteamVR_Actions.swissArmyKnifeUI_SkeletonLeftHand;
+                return SteamVR_Actions.default_SkeletonLeftHand;
             }
         }
         
@@ -69,15 +69,15 @@ namespace Valve.VR
         {
             get
             {
-                return SteamVR_Actions.swissArmyKnifeUI_SkeletonRightHand;
+                return SteamVR_Actions.default_SkeletonRightHand;
             }
         }
         
-        public virtual SteamVR_Action_Boolean SelectMode
+        public virtual SteamVR_Action_Single Squeeze
         {
             get
             {
-                return SteamVR_Actions.swissArmyKnifeUI_SelectMode;
+                return SteamVR_Actions.default_Squeeze;
             }
         }
         
@@ -85,7 +85,7 @@ namespace Valve.VR
         {
             get
             {
-                return SteamVR_Actions.swissArmyKnifeUI_HeadsetOnHead;
+                return SteamVR_Actions.default_HeadsetOnHead;
             }
         }
         
@@ -93,7 +93,7 @@ namespace Valve.VR
         {
             get
             {
-                return SteamVR_Actions.swissArmyKnifeUI_SnapTurnLeft;
+                return SteamVR_Actions.default_SnapTurnLeft;
             }
         }
         
@@ -101,7 +101,7 @@ namespace Valve.VR
         {
             get
             {
-                return SteamVR_Actions.swissArmyKnifeUI_SnapTurnRight;
+                return SteamVR_Actions.default_SnapTurnRight;
             }
         }
         
@@ -109,7 +109,7 @@ namespace Valve.VR
         {
             get
             {
-                return SteamVR_Actions.swissArmyKnifeUI_Haptic;
+                return SteamVR_Actions.default_Haptic;
             }
         }
     }
