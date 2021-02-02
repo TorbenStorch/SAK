@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
+using Valve.VR;
 
 /// <summary>
 /// P3 Swiss Army Knife project
@@ -21,17 +22,17 @@ public class FlippingAnimationButton : MonoBehaviour
     // For testing without vr controllers
     private void Update()
     {
-        TestVR();
+        //TestVR();
     }
 
-    public void TestVR()
+    /*public void TestVR()
     {
         if(Input.GetKeyDown(KeyCode.K))
         {
             Debug.Log("Flipping starts");
             flippingAnimationButtonPressed.Occured();
         }
-    }
+    }*/
 
     // Is this to access to steam vr?
     public void OnPress(Handheld hand)
@@ -43,6 +44,7 @@ public class FlippingAnimationButton : MonoBehaviour
     // Add this to object(Button or pedestal) with script "Hover Button": in inspector "On Button Down(Hand)"
     public void OnFlippingAnimationButtonPress()
     {
+        Debug.Log("Flipping starts");
         flippingAnimationButtonPressed.Occured();
     }
 }

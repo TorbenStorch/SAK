@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
+using Valve.VR;
+using UnityEngine.UI;
 
 /// <summary>
 /// P3 Swiss Army Knife project
@@ -17,20 +19,27 @@ using Valve.VR.InteractionSystem;
 public class SwitchToolMenuButton : MonoBehaviour
 {
     public UnityEvent SwitchToolMenu;
+    public SteamVR_Action_Boolean switchToolMenu;
 
     // For testing with VR glasses
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.C))
+        if(switchToolMenu.state == true)
         {
-            TestVR();
+            SwitchToolMenu.Occured();
         }
+
+        // For testing with VR glasses
+        //TestVR();
     }
 
-    public void TestVR()
+    /*public void TestVR()
     {
-        SwitchToolMenu.Occured();
-    }
+        if(Input.GetKeyDown(KeyCode.C))
+        {
+            SwitchToolMenu.Occured();
+        }
+    }*/
 
     public void OnPress (Handheld hand)
     {
