@@ -7,42 +7,39 @@ public class CapsulePosition : MonoBehaviour
     [HideInInspector]
     public bool activate;
 
-    [Range(0.2f, 15f)]
+    [Range(0.2f, 2f)]
     [Tooltip("Ascending speed of the knife")]
     public float speed = 1f;
-    public float rotationSpeed = 1f;
     public float endPosition = -1.106f;
 
-    //private new Rigidbody rigidbody;
 
-    //void Awake()
-    //{
-    //    rigidbody = GetComponent<Rigidbody>();
-    //}
-
-    
+    private void Start()
+    {
+        //to make the freeze-rotation work (otherwise it wont be consistent)
+        Rigidbody rb = this.GetComponent<Rigidbody>();
+        rb.centerOfMass = Vector3.zero;
+        rb.inertiaTensorRotation = Quaternion.identity;
+    }
     void Update()
     {
-        //if(Input.GetKeyDown(KeyCode.LeftArrow))
-        //{
-        //    rigidbody.AddTorque(0, rotationSpeed, 0);
-        //}
-        //else if (Input.GetKeyDown(KeyCode.RightArrow))
-        //{
-        //    rigidbody.AddTorque(0, -rotationSpeed, 0);
-        //}
-
         if (activate)
         {
             if (transform.position.y <= endPosition)
             {
-                //rigidbody.isKinematic = true;
                 transform.position += new Vector3(0, speed * Time.deltaTime, 0);
             }
-            else
+            if (transform.position.y >= endPosition)
             {
-                //rigidbody.isKinematic = false;
+                var colls = this.GetComponentsInChildren<MeshCollider>();
+                foreach (var collider in colls)
+                {
+                    collider.enabled = true;
+                    //dont collide with itselfe
+                    Physics.IgnoreCollision(collider, this.GetComponent<Collider>()); 
+                    Physics.IgnoreCollision(collider, collider);
+                }
             }
         }
     }
+
 }

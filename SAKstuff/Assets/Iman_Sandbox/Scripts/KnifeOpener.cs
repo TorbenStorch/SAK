@@ -7,16 +7,19 @@ public class KnifeOpener : MonoBehaviour
 {
     public Animator animator;
    
-    public void OncustomedButton ()
-    {
-        Debug.Log("test");
-    }
-    public void OnPress(Handheld hand)
+    public void OnCustomedButton()
     {
         bool open = animator.GetBool("open");
         open = !open;
         animator.SetBool("open", open);
         Debug.Log("Button pressed");
+    }
+    public void OnPress(Handheld hand)
+    {
+        //bool open = animator.GetBool("open");
+        //open = !open;
+        //animator.SetBool("open", open);
+        //Debug.Log("Button pressed");
     }
 
 }
