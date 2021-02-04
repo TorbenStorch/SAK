@@ -19,6 +19,7 @@ public class CapsulePosition : MonoBehaviour
         Rigidbody rb = this.GetComponent<Rigidbody>();
         rb.centerOfMass = Vector3.zero;
         rb.inertiaTensorRotation = Quaternion.identity;
+        GetComponent<CapsuleCollider>().enabled = false;
     }
     void Update()
     {
@@ -30,6 +31,7 @@ public class CapsulePosition : MonoBehaviour
             }
             if (transform.position.y >= endPosition)
             {
+                GetComponent<CapsuleCollider>().enabled = true;
                 var colls = this.GetComponentsInChildren<MeshCollider>();
                 foreach (var collider in colls)
                 {
