@@ -15,7 +15,10 @@ using UnityEngine;
 public class UnityEvent : ScriptableObject
 {
     private List<EventObserver> eobservers = new List<EventObserver>();
+    private List<EventTransfer> etransfers = new List<EventTransfer>();
 
+
+    // For Observers (EventObserver script)
     // When observer appeared, put him in a list
     public void Enroll(EventObserver observer)
     {
@@ -28,12 +31,33 @@ public class UnityEvent : ScriptableObject
         eobservers.Remove(observer);
     }
 
+    // For event transfer
+    // When observer appeared, put him in a list
+    public void Register(EventTransfer transfer)
+    {
+        etransfers.Add(transfer);
+    }
+
+    // When observer went out, put out him from the list
+    public void Unregister(EventTransfer transfer)
+    {
+        etransfers.Remove(transfer);
+    }
+
     // Looping throught registered observers and triggers the corresponding method
     public void Occured()
     {
         for (int counter = 0; counter < eobservers.Count; counter++)
         {
             eobservers[counter].OnEventOccurs();
+        }
+    }
+
+    public void Transferred(string toolName)
+    {
+        for (int counter = 0; counter < eobservers.Count; counter++)
+        {
+            etransfers[counter].OnEventTransfers(toolName);
         }
     }
 }

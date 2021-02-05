@@ -7,6 +7,7 @@ TagManager:
   - projectile
   - FxTemporaire
   - MoveDoor
+  - Pointer
   layers:
   - Default
   - TransparentFX

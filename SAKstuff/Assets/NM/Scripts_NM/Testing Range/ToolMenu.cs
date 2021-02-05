@@ -16,22 +16,49 @@ using UnityEngine.UI;
 public class ToolMenu : MonoBehaviour
 {
     public Image iToolMenu;
+    public Image iPointerIcon;
+    public Image iKnifeIcon;
+    public Image iFlashlightIcon;
+    public Image iScrewDriverIcon;
+    public Image iSawIcon;
+    public Image iCanOpenerIcon;
+    public Image iBottleOpenerIcon;
     private bool open = false;
 
-    void Start()
+    void Awake()
     {
-        iToolMenu.enabled = false; // enable Tool Menu image
+        SwitchOff();
+        
     }
 
+    private void SwitchOn()
+    {
+        iToolMenu.enabled = true;
+        iPointerIcon.enabled = true;
+        iKnifeIcon.enabled = true;
+        iFlashlightIcon.enabled = true;
+        iScrewDriverIcon.enabled = true;
+        /*iCanOpenerIcon.enabled = true;*/
+    }
+    private void SwitchOff()
+    {
+        iToolMenu.enabled = false;
+        iPointerIcon.enabled = false;
+        iKnifeIcon.enabled = false;
+        iFlashlightIcon.enabled = false;
+        iScrewDriverIcon.enabled = false;
+         /*iCanOpenerIcon.enabled = false;*/
+    }
+    // If menu button was pressed, switch on/off the menu tool
     public void Switch()
     {
         if(open == false)
         {
-            iToolMenu.enabled = true;
+            SwitchOn();
             open = true;
         } else
         {
-            iToolMenu.enabled = false;
+            SwitchOff();
             open = false;
         }
     }

@@ -10,10 +10,10 @@ using UnityEngine.UI;
 /// Namgar Mardvaeva
 /// Group № 2 (Iman, Namgar, Torben)
 /// Summary: 
-/// 1) Responsible for giving signal that Tool Menu has to be switched off
-/// 2) Has to be connceted with appropriate Button (control stick on VR controllers)
+/// 1) Responsible for giving signal that Tool Menu has to be switched on/off
+/// 2) Has to be connceted with appropriate Button (button above control stick on VR controllers)
 /// 3) Part of the observer pattern.
-/// 4) Without VR glasses could be used with C.
+/// 4) Without VR glasses could be used with key C.
 /// </summary>
 
 public class SwitchToolMenuButton : MonoBehaviour
@@ -22,9 +22,11 @@ public class SwitchToolMenuButton : MonoBehaviour
     public SteamVR_Action_Boolean switchToolMenu;
 
     // For testing with VR glasses
+    // Switching tool menu in VR
+    // Add this to object(Button) with script "Hover Button": in inspector "On Button Down(Hand)"
     void Update()
     {
-        if(switchToolMenu.state == true)
+        if(switchToolMenu.stateDown == true)
         {
             SwitchToolMenu.Occured();
         }
@@ -40,16 +42,5 @@ public class SwitchToolMenuButton : MonoBehaviour
             SwitchToolMenu.Occured();
         }
     }*/
-
-    public void OnPress (Handheld hand)
-    {
-        
-    }
-    // Switching tool menu in VR
-    // Add this to object(Button) with script "Hover Button": in inspector "On Button Down(Hand)"
-    public void OnSwitchToolMenuButtonPress()
-    {
-        SwitchToolMenu.Occured();
-    }
 
 }
