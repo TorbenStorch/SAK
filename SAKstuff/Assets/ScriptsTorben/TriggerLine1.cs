@@ -26,7 +26,8 @@ public class TriggerLine1 : MonoBehaviour
 
     //for animation
     [Header("Animation")]
-    public CapsulePosition Capsule;
+    public SAKPositionRotation giantSAK;
+    //public CapsulePosition Capsule;
     public float timeUntilSAK = 1f;
 
     //for Hatch 
@@ -77,7 +78,7 @@ public class TriggerLine1 : MonoBehaviour
 
     void AnimationFunction()
     {
-        Capsule.activate = true;
+        giantSAK.activate = true;
         Debug.Log("SAK appear animation can start");
     }
 
