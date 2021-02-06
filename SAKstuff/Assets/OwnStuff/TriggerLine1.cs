@@ -61,7 +61,7 @@ public class TriggerLine1 : MonoBehaviour
             AnimationFunction();
             AudioFunction();
 
-            Debug.Log("Trigger line crossed"); //test
+            //Debug.Log("Trigger line crossed"); //test
             //gameObject.GetComponent<Collider>().enabled = false; //so that we can't activate it more then once - not necessary due to lightGoesOn bool, but maybe later will be needed
         }
     }
@@ -69,17 +69,17 @@ public class TriggerLine1 : MonoBehaviour
     void AnimationFunction()
     {
         startSAKAppearAnimation = true;
-        Debug.Log("SAK appear animation can start");
+        //Debug.Log("SAK appear animation can start");
     }
     void AudioFunction()
     {
         startTheSAKAppearAudio = true;
-        Debug.Log("SAK appear audio can start");
+        //Debug.Log("SAK appear audio can start");
     }
 
     void SpotLightFunction()
     {
-        Debug.Log("Spotlights will be activated");
+        //Debug.Log("Spotlights will be activated");
         if (lightIntesityValue < maxLightIntesity && lightGoesOn)
         {
             lightIntesityValue += stepsItWillTakeUntilLightIsOnOrOff;
