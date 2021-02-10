@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2714410803063960497
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2714410803063960498}
+  - component: {fileID: 2714410803063960499}
+  - component: {fileID: 2714410803063960496}
+  m_Layer: 0
+  m_Name: ToolMenuManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2714410803063960498
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2714410803063960497}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.3114393, y: -1.5108559, z: 0.022810921}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2714410803063960499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2714410803063960497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f6cae098bbdb2343840bac5efc5142f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SwitchToolMenu: {fileID: 11400000, guid: d18738b43df3a3448aa83d8724895a6c, type: 2}
+  switchToolMenu:
+    actionPath: /actions/default/in/SwitchToolMenu
+    needsReinit: 0
+--- !u!114 &2714410803063960496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2714410803063960497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b60b6d66c807804b8a573562c21210f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectionMode:
+    actionPath: /actions/default/in/SelectionMode
+    needsReinit: 0
+  triggerPressed: {fileID: 11400000, guid: 84fc75e67a6dc8a4e90bee5af337b96c, type: 2}
