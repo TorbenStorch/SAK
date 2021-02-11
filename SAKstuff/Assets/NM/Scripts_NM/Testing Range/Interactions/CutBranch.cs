@@ -13,12 +13,14 @@ using UnityEngine;
 /// </summary>
 public class CutBranch : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if(other.tag == "Saw")
+        if(collision.gameObject.tag == "Saw")
         {
-            Debug.Log("SAK toched");
-            this.GetComponent<Rigidbody>().useGravity = true;
+            if(this.GetComponent<Rigidbody>().useGravity == false)
+            {
+                this.GetComponent<Rigidbody>().useGravity = true;
+            }
         }
     }
 }

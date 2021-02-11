@@ -18,18 +18,10 @@ public class CutRope : MonoBehaviour
         if(collision.gameObject.tag == "Knife")
         {
             // When gravity is switched on - down part will fall
-            this.GetComponent<Rigidbody>().useGravity = true;
+            if (this.GetComponent<Rigidbody>().useGravity == false)
+            {
+                this.GetComponent<Rigidbody>().useGravity = true;
+            }
         }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

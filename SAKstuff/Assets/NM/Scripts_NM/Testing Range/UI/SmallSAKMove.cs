@@ -104,6 +104,7 @@ public class SmallSAKMove : MonoBehaviour
         }
         else if (toolName == "FlashlightIcon")
         {
+            this.gameObject.GetComponentInChildren<Light>().intensity = 2f;
             anim.ResetTrigger("OffFlashlight");
             anim.SetTrigger("OnFlashlight");
         }
@@ -147,6 +148,7 @@ public class SmallSAKMove : MonoBehaviour
         }
         else if (toolName == "FlashlightIcon")
         {
+            this.gameObject.GetComponentInChildren<Light>().intensity = 0f;
             anim.SetTrigger("OffFlashlight");
             anim.ResetTrigger("OnFlashlight");
         }

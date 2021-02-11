@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// p.s. This was moved to script SAK move
 
 public class SAKled : MonoBehaviour
 {
