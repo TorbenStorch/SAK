@@ -9,6 +9,11 @@ TagManager:
   - MoveDoor
   - Saw
   - Knife
+  - SAK
+  - Pointer
+  - Icon
+  - CanOpener
+  - ScrewDriver
   layers:
   - Default
   - TransparentFX
