@@ -210,7 +210,6 @@ namespace Valve.VR.InteractionSystem
 			}
 
 			ItemPackage attachedItemPackage = packageReference.itemPackage; // return the ItemPackage reference we find.
-
 			return attachedItemPackage;
 		}
 
