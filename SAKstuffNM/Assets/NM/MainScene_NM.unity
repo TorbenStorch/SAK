@@ -4558,6 +4558,7 @@ MonoBehaviour:
   pointer: {fileID: 2062126403}
   toolMenu: {fileID: 602496849}
   test: {fileID: 961325941}
+  toolMenuPoint: {fileID: 602496849}
 --- !u!114 &2062126407
 MonoBehaviour:
   m_ObjectHideFlags: 0

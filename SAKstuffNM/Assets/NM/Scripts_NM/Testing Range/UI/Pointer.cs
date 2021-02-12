@@ -24,7 +24,7 @@ public class Pointer : MonoBehaviour
 
     // var from math lecture
     Vector3 vDirection;
-    bool clockwise = false;
+    public GameObject toolMenuPoint;
 
     private void Start()
     {
@@ -61,10 +61,34 @@ public class Pointer : MonoBehaviour
             
             Coords newDir = ERMath.Rotate(new Coords(0, 0, 1), angle, true);*/
 
-            // Trying to make own rotation
-            float xVal = leftHand.transform.position.x * Mathf.Cos(1.5708f) - leftHand.transform.position.z * Mathf.Sin(1.5708f);
-            pointer.transform.localPosition = new Vector3(xVal*10, 0, 0);
+            // Trying to make own rotation  works, problem only with length
+            //float xVal = leftHand.transform.position.x*10 * Mathf.Cos(1.5708f) - leftHand.transform.position.z*10 * Mathf.Sin(1.5708f);
+            //pointer.transform.localPosition = new Vector3(xVal, 0, 0);
 
+            // Next - compute angle from rotated canvas/tool menu and z(0,0,1) and put it in xVal7
+            // Changed in inspector from tool menu point to canvas object
+
+            /*float dotProduct = zPos.x * toolMenu.transform.position.x +
+                               zPos.y * toolMenu.transform.position.y +
+                               zPos.z * toolMenu.transform.position.z;
+            float dotDiv = dotProduct/()*/
+            // Nope, I will use ERMath
+            vDirection = toolMenu.transform.position - new Vector3(0, 0, 1);
+            Coords dirNorm = ERMath.GetNormal(new Coords(vDirection));
+            vDirection = dirNorm.ToVector();
+            float angle = ERMath.Angle(new Coords(0, 0, 1), new Coords(vDirection));
+            Debug.Log(angle * 180.0f / Mathf.PI);
+            float xVal = leftHand.transform.position.x * Mathf.Cos(angle) - leftHand.transform.position.z * Mathf.Sin(angle);
+            //float zVal = leftHand.transform.position.x * Mathf.Sin(angle) + leftHand.transform.position.z * Mathf.Cos(angle);
+            // Need adjustable changer of angle ???
+            if(angle > 3.14 && angle < 6.28)
+            {
+                pointer.transform.localPosition = new Vector3(-xVal * 100, leftHand.transform.position.y * 100, 0);
+            } else
+            {
+                pointer.transform.localPosition = new Vector3(xVal * 100, leftHand.transform.position.y * 100, 0);
+            }
+            
 
 
             // new - doesn't rotate vector from comtroller - works only if controller looks forward in z direction
