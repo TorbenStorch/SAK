@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BottleOpener : MonoBehaviour
 {
-    private string sakTag = "BottleOpener";
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "BottleOpener")
