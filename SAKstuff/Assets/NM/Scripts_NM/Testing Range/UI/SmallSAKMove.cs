@@ -57,7 +57,7 @@ public class SmallSAKMove : MonoBehaviour
     // Connection with tool
     private string toolName;
     private GameObject[] icons;
-    
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -91,6 +91,7 @@ public class SmallSAKMove : MonoBehaviour
         {
             anim.ResetTrigger("DoCloseSaw");
             anim.SetTrigger("DoOpenSaw");
+            
         }
         else if (toolName == "BottleOpenerIcon")
         {
