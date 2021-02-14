@@ -3923,6 +3923,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 107946, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -8058,6 +8062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc19519f4a2ec3542ac493a6173f09a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ropeCut: 0
 --- !u!1 &1281460656
 GameObject:
   m_ObjectHideFlags: 0
