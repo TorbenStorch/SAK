@@ -13,16 +13,10 @@ using UnityEngine;
 /// </summary>
 public class CutRope : MonoBehaviour
 {
-    //note from torben: needed that :)
-    [HideInInspector]
-    public bool ropeCut = false;
-    //note end
-
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Knife")
         {
-            ropeCut = true;
             // When gravity is switched on - down part will fall
             if (this.GetComponent<Rigidbody>().useGravity == false)
             {
