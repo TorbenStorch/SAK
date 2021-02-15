@@ -7,6 +7,8 @@ public class CanEnable : MonoBehaviour
     public GameObject canOpen;
     public GameObject canClose;
     private string sakTag = "CanOpener";
+    [HideInInspector]
+    public bool canOpened = false;
 
     void Start()
     {

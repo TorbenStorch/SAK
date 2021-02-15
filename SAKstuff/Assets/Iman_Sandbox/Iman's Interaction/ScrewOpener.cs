@@ -11,6 +11,10 @@ public class ScrewOpener : MonoBehaviour
 
     private string sakTag = "ScrewDriver";
 
+    // For adventure
+    [HideInInspector]
+    public bool screwOpened = false;
+
     void Start()
     {
         GetComponent<Rigidbody>().isKinematic = true;
