@@ -58,10 +58,6 @@ public class SmallSAKMove : MonoBehaviour
     private string toolName;
     private GameObject[] icons;
 
-    // For adventure
-    [HideInInspector]
-    public bool flashlightUsed = false;
-
     // Start is called before the first frame update
     void Awake()
     {
@@ -110,10 +106,6 @@ public class SmallSAKMove : MonoBehaviour
         else if (toolName == "FlashlightIcon")
         {
             this.gameObject.GetComponentInChildren<Light>().intensity = 2f;
-            if(flashlightUsed == false)
-            {
-                flashlightUsed = true;
-            }
             anim.ResetTrigger("OffFlashlight");
             anim.SetTrigger("OnFlashlight");
         }
