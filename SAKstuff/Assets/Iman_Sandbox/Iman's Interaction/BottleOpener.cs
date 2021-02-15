@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BottleOpener : MonoBehaviour
 {
+    [HideInInspector]
+    public bool bottleOpened = false;
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "BottleOpener")
