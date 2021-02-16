@@ -1,0 +1,9 @@
+09.02.2021 - T.I.S.
+1. Put in 'ActivateFireTrigger' prefab
+2. activate_fire_triggerBox: Change in the Script-Component 'Acitave Fire' the following:
+	Branches Needed: put in the number of branches you want to put into the fire place to turn the fire on
+	Fire Particle: Drag your own particle system in there (if you want to use a different)
+	Branches: Change the array size & drag in all branch-objects you want to use (branches will be deactivated once they got put into the fire place)
+	Logs: Change the array size & drag in all log-objects you want to use (they will be inactive until a branch got put into the fire place)
+3. If you use a different a particle system, logs or branches, you can delete the children from 'ActivateFireTrigger'
+4. Change the size of the 'activate_fire_triggerBox' Box Collider AND change or remove the Mesh Filter & Mesh Renderer

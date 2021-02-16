@@ -13,9 +13,6 @@ using UnityEngine;
 /// </summary>
 public class CutBranch : MonoBehaviour
 {
-    [HideInInspector]
-    public bool branchCut = false;
-
     private void Start()
     {
         this.GetComponent<Rigidbody>().useGravity = false;
@@ -27,10 +24,6 @@ public class CutBranch : MonoBehaviour
         {
             if (this.GetComponent<Rigidbody>().useGravity == false)
             {
-                if(branchCut == false)
-                {
-                    branchCut = true;
-                }
                 this.GetComponent<Rigidbody>().useGravity = true;
             }
         }

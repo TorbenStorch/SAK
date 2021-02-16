@@ -15,7 +15,6 @@ TagManager:
   - CanOpener
   - ScrewDriver
   - BottleOpener
-  - BotOpener
   layers:
   - Default
   - TransparentFX
@@ -25,7 +24,7 @@ TagManager:
   - UI
   - 
   - 
-  - Post-Processing
+  - 
   - 
   - 
   - 

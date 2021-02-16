@@ -1,0 +1,61 @@
+# Blender MTL File: 'W02 - MFM200 - Sketchfab - mesh.blend'
+# Material Count: 5
+
+newmtl Material
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump Texture\\W02 - MFM200 - Esquisse black_normal.jpg
+map_Kd Texture\\W02 - MFM200 - Esquisse black_baseColor.jpg
+map_Ns Texture\\W02 - MFM200 - Esquisse black_roughness.jpg
+
+newmtl back
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump -bm 0.300000 Texture\\W02 - MFM200 - back_normal.jpg
+map_Kd Texture\\W02 - MFM200 - back_baseColor.jpg
+map_Ns Texture\\W02 - MFM200 - back_roughness.jpg
+
+newmtl metal
+Ns 440.999985
+Ka 1.000000 1.000000 1.000000
+Kd 0.186808 0.101855 0.035298
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+
+newmtl mirror
+Ns 846.810001
+Ka 1.000000 1.000000 1.000000
+Kd 0.482130 0.482130 0.482130
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl wood
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump Texture\\Esquisse - wood_normal.jpeg
+map_Kd Texture\\Esquisse - wood_baseColor.jpg
+map_Ns Texture\\Esquisse - wood_roughness.jpeg
