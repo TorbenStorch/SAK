@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/// P3 Swiss Army Knife project
+/// Torben Storch
+/// Group 2 (Iman, Namgar, Torben)
+/// Summary: 
+/// 1) Test for flashlight
+
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

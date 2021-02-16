@@ -12896,7 +12896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   touchedTrigger: 0
   allSpotlights: {fileID: 338177030}
-  maxLightIntesity: 10
+  maxLightIntesity: 2.65
   minLightIntesity: 0.1
   timeToStartSpotlightsInSec: 10
   timeBeforeDimmingDownInSec: 5
@@ -14363,6 +14363,7 @@ MonoBehaviour:
   moveSpeed: 0.2
   touched: 0
   endPos: {x: -13.158, y: -1.820319, z: 0}
+  woodenPlank: {fileID: 6678103815971900413}
 --- !u!54 &1860757919
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15405,6 +15406,7 @@ MonoBehaviour:
   moveSpeed: 0.2
   touched: 0
   endPos: {x: -13.158, y: -1.820319, z: 0}
+  woodenPlank: {fileID: 6678103815971900413}
 --- !u!65 &1984846649
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22198,7 +22200,7 @@ MeshRenderer:
   - {fileID: 2100000, guid: ab9c7d9399624ba43b04d906c458dd4c, type: 2}
   - {fileID: 2100000, guid: f491440262c7cde42a0c5c5c3ea4ff20, type: 2}
   - {fileID: 2100000, guid: 44246e2bbb54a5445b42153473f14905, type: 2}
-  - {fileID: 2100000, guid: 23f3ad1c7e053d94f8cdf5cc34759aa1, type: 2}
+  - {fileID: 2100000, guid: d454e8da2034cfc4c8870e85b29b95f9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

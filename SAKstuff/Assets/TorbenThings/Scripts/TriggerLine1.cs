@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/// P3 Swiss Army Knife project
+/// Torben Storch
+/// Group 2 (Iman, Namgar, Torben)
+/// Summary: 
+/// 1) Responsible for activating spotlights, starting animations and sound
+/// 2) Has to be connceted with spotlights that can be adjusted (intensity, light-up-speed), giant sak-object, pedestal/hatch-object
+
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/// P3 Swiss Army Knife project
+/// Torben Storch
+/// Group 2 (Iman, Namgar, Torben)
+/// Summary: 
+/// 1) Responsible for switching the scenes from transition-room to adventure
+/// 2) Has to be connceted with the door and its interaction-component -> when user hovers over door-handle, controller button gets shown and when pressed, the scene changes
+
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
@@ -32,7 +40,7 @@ public class DoorSceneSwitch : MonoBehaviour
         if (grabType != GrabTypes.None)
         {
             Debug.LogWarning("SceneSwitch");
-            Invoke("SwitchScene", 0.5f);
+            Invoke("SwitchScene", 0.4f);
         }
     }
 

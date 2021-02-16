@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/// P3 Swiss Army Knife project
+/// All
+/// Group 2 (Iman, Namgar, Torben)
+/// Summary: 
+/// 1) Responsible for letting the WoddenPlank fall down
+/// 2) Has to be connceted with all the screws which should hold the wooden-plank in place (all screws need to be put into the array in the inspector)
+
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

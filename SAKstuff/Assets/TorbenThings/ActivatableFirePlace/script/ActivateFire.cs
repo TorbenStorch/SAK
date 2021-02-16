@@ -1,7 +1,13 @@
 ﻿/////////////////////////////////
 //Script to Acitvate a Fire Place
-//09.02.2021 T.I.S.
 /////////////////////////////////
+/// P3 Swiss Army Knife project
+/// Torben Storch
+/// Group 2 (Iman, Namgar, Torben)
+/// Summary: 
+/// 1) Responsible for activating the campfire after branches got put into the campfire-trigger-box -> activate fire-particles & logs
+/// 2) Has to be connceted with a particle system & logs-objects & branch-objects
+
 
 using System.Collections;
 using System.Collections.Generic;

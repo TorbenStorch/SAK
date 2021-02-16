@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/// P3 Swiss Army Knife project
+/// Torben Storch
+/// Group 2 (Iman, Namgar, Torben)
+/// Summary: 
+/// 1) Responsible for activating spotlights and creating animations for the doors, 
+/// 2) Has to be connceted with the giant SAK & its Interaction component(when its touched the actions will be invoked), doors to move, spotlights to adjust
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
