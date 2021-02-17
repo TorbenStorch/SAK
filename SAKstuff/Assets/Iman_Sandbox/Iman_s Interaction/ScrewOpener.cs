@@ -17,6 +17,9 @@ public class ScrewOpener : MonoBehaviour
     public GameObject woodenPlank;
 
     private string sakTag = "ScrewDriver";
+    // For adventure
+    [HideInInspector]
+    public bool screwOpened = false;
 
     void Start()
     {
@@ -52,5 +55,10 @@ public class ScrewOpener : MonoBehaviour
         touched = false;
         GetComponent<Collider>().isTrigger = false;
         GetComponent<Rigidbody>().isKinematic = false;
+        // For adventure
+        if(screwOpened == false)
+        {
+            screwOpened = true;
+        }
     }
 }

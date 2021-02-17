@@ -13,6 +13,9 @@ public class CanEnable : MonoBehaviour
     public GameObject canClose;
     private string sakTag = "CanOpener";
 
+    [HideInInspector]
+    public bool canOpened = false;
+
     void Start()
     {
         canClose.SetActive(true);
@@ -25,6 +28,11 @@ public class CanEnable : MonoBehaviour
         {
             canOpen.SetActive(true);
             canClose.SetActive(false);
+            // For adventure
+            if(canOpened == false)
+            {
+                canOpened = true;
+            }
         }
     }
 }

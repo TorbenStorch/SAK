@@ -15,6 +15,7 @@ TagManager:
   - CanOpener
   - ScrewDriver
   - BottleOpener
+  - SmallSAK
   layers:
   - Default
   - TransparentFX

@@ -10,6 +10,9 @@ using UnityEngine;
 
 public class BottleOpener : MonoBehaviour
 {
+    [HideInInspector]
+    public bool bottleOpened = false;
+
     private string sakTag = "BottleOpener";
     private void OnTriggerEnter(Collider other)
     {
@@ -20,6 +23,10 @@ public class BottleOpener : MonoBehaviour
             if (this.GetComponent<Rigidbody>().useGravity == false)
             {
                 this.GetComponent<Rigidbody>().useGravity = true;
+                if(bottleOpened == false)
+                {
+                    bottleOpened = true;
+                }
             }
         }
     } 

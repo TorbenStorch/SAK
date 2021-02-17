@@ -497,13 +497,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1390541769709528189}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.34041235, y: 0, z: -1.7763567e-16}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: -0.3, y: -7.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1852357198793017915}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!33 &4584838550104935362
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1353,7 +1353,7 @@ GameObject:
   - component: {fileID: 1382746407694362538}
   m_Layer: 0
   m_Name: ClassicSAK
-  m_TagString: Untagged
+  m_TagString: SmallSAK
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1561,6 +1561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f185ae727e467b947b6ba4cd36364cc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flashlightUsed: 0
 --- !u!114 &1382746407694362538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2360,7 +2361,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8487306257088697963}
   - component: {fileID: 3090530056607812648}
-  - component: {fileID: 9078313098477580272}
   m_Layer: 0
   m_Name: Spot Light
   m_TagString: Untagged
@@ -2443,18 +2443,6 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &9078313098477580272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4099812398677370143}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 442223711719d7a4a94dd7b38ff724fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4293050553334260816
 GameObject:
   m_ObjectHideFlags: 0
@@ -2516,7 +2504,7 @@ GameObject:
   - component: {fileID: 7869521616898803927}
   m_Layer: 0
   m_Name: opener
-  m_TagString: BotOpener
+  m_TagString: BottleOpener
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2528,13 +2516,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4490611547602798995}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6072519, y: -7.105427e-16, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: 0.61, y: -7.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1852357198793017915}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!33 &6760558895189781829
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2595,8 +2583,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.20000038, y: 4.5148077, z: 1.5573499}
-  m_Center: {x: 0.014905535, y: -1.6616889, z: 0.2125229}
+  m_Size: {x: 0.20000038, y: 4.5148077, z: 0.8958345}
+  m_Center: {x: 0.014905538, y: -1.6616888, z: 0.54328007}
 --- !u!54 &7869521616898803927
 Rigidbody:
   m_ObjectHideFlags: 0

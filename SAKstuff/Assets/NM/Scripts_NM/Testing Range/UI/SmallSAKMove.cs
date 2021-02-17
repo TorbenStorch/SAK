@@ -58,6 +58,11 @@ public class SmallSAKMove : MonoBehaviour
     private string toolName;
     private GameObject[] icons;
 
+    // For adventure
+    //[HideInInspector]
+    public bool flashlightUsed = false;
+    public bool adventureStarted = true;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -68,6 +73,10 @@ public class SmallSAKMove : MonoBehaviour
     // If trigger was pressed & pointer was above icon, animation starts
     public void StartAnimation()
     {
+        if(adventureStarted == true)
+        {
+            icons = GameObject.FindGameObjectsWithTag("Icon");
+        }
         // Check which icon was enabled
         foreach(GameObject icon in icons)
         {
@@ -78,6 +87,7 @@ public class SmallSAKMove : MonoBehaviour
             }
         }
 
+        // Icons
         if (toolName == "KnifeIcon")
         {
             anim.ResetTrigger("DoCloseKnife");
@@ -105,7 +115,12 @@ public class SmallSAKMove : MonoBehaviour
         }
         else if (toolName == "FlashlightIcon")
         {
+            Debug.Log("Light was switched on");
+            // For switching light
             this.gameObject.GetComponentInChildren<Light>().intensity = 2f;
+            // For adventure
+            AdventureFlashlight();
+            // For animation
             anim.ResetTrigger("OffFlashlight");
             anim.SetTrigger("OnFlashlight");
         }
@@ -118,7 +133,6 @@ public class SmallSAKMove : MonoBehaviour
             if (icon.GetComponent<ReactableIcon>().switchOn == true)
             {
                 toolName = icon.name;
-                Debug.Log(toolName);
             }
         }
 
@@ -152,6 +166,15 @@ public class SmallSAKMove : MonoBehaviour
             this.gameObject.GetComponentInChildren<Light>().intensity = 0f;
             anim.SetTrigger("OffFlashlight");
             anim.ResetTrigger("OnFlashlight");
+        }
+    }
+
+
+    private void AdventureFlashlight()
+    {
+        if (flashlightUsed == false)
+        {
+            flashlightUsed = true;
         }
     }
 }
