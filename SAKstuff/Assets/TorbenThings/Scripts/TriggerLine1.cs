@@ -46,7 +46,8 @@ public class TriggerLine1 : MonoBehaviour
 
     //for music/sound
     [Header("Music and Sound")]
-    public bool startTheSAKAppearAudio = false;
+    public AudioSource pedestalOpening;
+    public AudioSource SAKPopUp;
     //here will be the data for the audio part
 
     void Awake()
@@ -77,7 +78,6 @@ public class TriggerLine1 : MonoBehaviour
             Invoke("AnimationFunction", timeUntilSAK);
             Invoke("HatchFunction", timeUntilHatch);
             //AnimationFunction();
-            AudioFunction();
 
             Debug.Log("Trigger line crossed"); //test
             //gameObject.GetComponent<Collider>().enabled = false; //so that we can't activate it more then once - not necessary due to lightGoesOn bool, but maybe later will be needed
@@ -87,19 +87,22 @@ public class TriggerLine1 : MonoBehaviour
     void AnimationFunction()
     {
         giantSAK.activate = true;
+        SAKPopUp.enabled = true;
         Debug.Log("SAK appear animation can start");
     }
 
     void HatchFunction()
     {
         hatch.activatePed = true;
+        //AudioFunction();
+        pedestalOpening.enabled = true;
     }
 
-    void AudioFunction()
-    {
-        startTheSAKAppearAudio = true;
-        Debug.Log("SAK appear audio can start");
-    }
+    //void AudioFunction()
+    //{
+    //    pedestalOpening.enabled = true;
+    //    Debug.Log("SAK appear audio can start");
+    //}
 
     void SpotLightFunction()
     {

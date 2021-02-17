@@ -15,6 +15,12 @@ public class CutBranch : MonoBehaviour
 {
     [HideInInspector]
     public bool branchCut = false;
+    private GameObject audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager");
+    }
 
     private void Start()
     {
@@ -29,7 +35,7 @@ public class CutBranch : MonoBehaviour
             this.GetComponent<BoxCollider>().isTrigger = false;
             if (this.GetComponent<Rigidbody>().useGravity == false)
             {
-
+                audioManager.GetComponent<AudioManager>().Play("Branch");
                 this.GetComponent<Rigidbody>().useGravity = true;
                 if (branchCut == false)
                 {

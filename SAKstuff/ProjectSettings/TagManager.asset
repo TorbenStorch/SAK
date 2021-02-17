@@ -17,6 +17,7 @@ TagManager:
   - BottleOpener
   - SmallSAK
   - TMPoint
+  - AudioManager
   layers:
   - Default
   - TransparentFX

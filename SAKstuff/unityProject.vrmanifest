@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.sakstuff.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\Student\\Documents\\GitHub\\Namgar Mardvaeva\\Torben ver\\SAK\\SAKstuff\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "C:\\Users\\Student\\Desktop\\GitHub-P3\\SAK\\SAKstuff\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "SAKstuff [Testing]"

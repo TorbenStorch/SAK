@@ -24,11 +24,12 @@ public class ToolMenu : MonoBehaviour
     public Image iCanOpenerIcon;
     public Image iBottleOpenerIcon;
     private bool open = false;
+    private GameObject audioManager;
 
     void Awake()
     {
         SwitchOff();
-        
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager");
     }
 
     private void SwitchOn()
@@ -56,6 +57,7 @@ public class ToolMenu : MonoBehaviour
     // If menu button was pressed, switch on/off the menu tool
     public void Switch()
     {
+        audioManager.GetComponent<AudioManager>().Play("UI Menu");
         if(open == false)
         {
             SwitchOn();

@@ -62,12 +62,14 @@ public class SmallSAKMove : MonoBehaviour
     //[HideInInspector]
     public bool flashlightUsed = false;
     public bool adventureStarted = true;
+    private GameObject audioManager;
 
     // Start is called before the first frame update
     void Awake()
     {
         anim = GetComponent<Animator>();
         icons = GameObject.FindGameObjectsWithTag("Icon");
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager");
     }
 
     // If trigger was pressed & pointer was above icon, animation starts
@@ -117,6 +119,7 @@ public class SmallSAKMove : MonoBehaviour
         {
             Debug.Log("Light was switched on");
             // For switching light
+            //audioManager.GetComponent<AudioManager>().Play("Flashlight");
             this.gameObject.GetComponentInChildren<Light>().intensity = 2f;
             // For adventure
             AdventureFlashlight();

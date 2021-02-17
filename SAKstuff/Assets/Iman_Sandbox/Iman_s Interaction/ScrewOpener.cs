@@ -20,6 +20,12 @@ public class ScrewOpener : MonoBehaviour
     // For adventure
     [HideInInspector]
     public bool screwOpened = false;
+    private GameObject audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager");
+    }
 
     void Start()
     {
@@ -30,7 +36,7 @@ public class ScrewOpener : MonoBehaviour
     {
         if(collision.transform.CompareTag(sakTag))
         {
-            //FindObjectOfType<AudioManager>().Play("balloon");
+            audioManager.GetComponent<AudioManager>().Play("Screw");
             touched = true;
 
             //FindObjectOfType<WoodenPlank>().amount -= 1; // -> if we have more woodenPlanks in the scene that wont work
@@ -52,6 +58,7 @@ public class ScrewOpener : MonoBehaviour
     }
     void dropDown()
     {
+        //audioManager.GetComponent<AudioManager>().Play("Screw");
         touched = false;
         GetComponent<Collider>().isTrigger = false;
         GetComponent<Rigidbody>().isKinematic = false;
