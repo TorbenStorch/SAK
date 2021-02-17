@@ -18,16 +18,32 @@ public class CutRope : MonoBehaviour
     public bool ropeCut = false;
     //note end
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.tag == "Knife")
+        if (other.tag == "Knife")
         {
-            ropeCut = true;
-            // When gravity is switched on - down part will fall
+            this.GetComponent<Rigidbody>().isKinematic = false;
+            this.GetComponent<BoxCollider>().isTrigger = false;
             if (this.GetComponent<Rigidbody>().useGravity == false)
             {
                 this.GetComponent<Rigidbody>().useGravity = true;
+                if (ropeCut == false)
+                {
+                    ropeCut = true;
+                }
             }
         }
+        /*private void OnCollisionEnter(Collision collision)
+        {
+            if(collision.gameObject.tag == "Knife")
+            {
+                ropeCut = true;
+                // When gravity is switched on - down part will fall
+                if (this.GetComponent<Rigidbody>().useGravity == false)
+                {
+                    this.GetComponent<Rigidbody>().useGravity = true;
+                }
+            }
+       */
     }
 }

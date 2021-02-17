@@ -12,9 +12,14 @@ using UnityEngine;
 /// </summary>
 public class TMenuOnHand : MonoBehaviour
 {
-    public Transform rightHand;
+    private GameObject toolMenuPoint;
     private Vector3 toolMenuPos;
     private bool on = false;
+
+    private void Start()
+    {
+        toolMenuPoint = GameObject.FindGameObjectWithTag("TMPoint");
+    }
 
     // if menu button on right controller was pressed - put tool menu on hand
     public void Positioning()
@@ -34,12 +39,12 @@ public class TMenuOnHand : MonoBehaviour
         if(on == true)
         {
             // rotation
-            this.transform.rotation = rightHand.transform.rotation;
+            this.transform.rotation = toolMenuPoint.transform.rotation;
 
             // transform
-            toolMenuPos.x = rightHand.transform.position.x;
-            toolMenuPos.y = rightHand.transform.position.y;
-            toolMenuPos.z = rightHand.transform.position.z;
+            toolMenuPos.x = toolMenuPoint.transform.position.x;
+            toolMenuPos.y = toolMenuPoint.transform.position.y;
+            toolMenuPos.z = toolMenuPoint.transform.position.z;
             this.transform.position = toolMenuPos;
         }
     }

@@ -18,20 +18,23 @@ public class CutBranch : MonoBehaviour
 
     private void Start()
     {
-        this.GetComponent<Rigidbody>().useGravity = false;
+
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Saw")
         {
+            this.GetComponent<Rigidbody>().isKinematic = false;
+            this.GetComponent<BoxCollider>().isTrigger = false;
             if (this.GetComponent<Rigidbody>().useGravity == false)
             {
+
+                this.GetComponent<Rigidbody>().useGravity = true;
                 if (branchCut == false)
                 {
                     branchCut = true;
                 }
-                this.GetComponent<Rigidbody>().useGravity = true;
             }
         }
     }

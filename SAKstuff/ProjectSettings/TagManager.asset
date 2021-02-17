@@ -16,6 +16,7 @@ TagManager:
   - ScrewDriver
   - BottleOpener
   - SmallSAK
+  - TMPoint
   layers:
   - Default
   - TransparentFX
