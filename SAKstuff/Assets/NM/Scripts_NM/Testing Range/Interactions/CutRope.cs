@@ -24,33 +24,35 @@ public class CutRope : MonoBehaviour
     }
     //note end
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.tag == "Knife")
-    //    {
-    //        this.GetComponent<Rigidbody>().isKinematic = false;
-    //        this.GetComponent<BoxCollider>().isTrigger = false;
-    //        if (this.GetComponent<Rigidbody>().useGravity == false)
-    //        {
-    //            this.GetComponent<Rigidbody>().useGravity = true;
-    //            if (ropeCut == false)
-    //            {
-    //                ropeCut = true;
-    //            }
-    //        }
-    //    }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Knife")
+        {
+            this.GetComponent<Rigidbody>().isKinematic = false;
+            this.GetComponent<CapsuleCollider>().isTrigger = false;
+            if (this.GetComponent<Rigidbody>().useGravity == false)
+            {
+                this.GetComponent<Rigidbody>().useGravity = true;
+                audioManager.GetComponent<AudioManager>().Play("Rope");
+
+                if (ropeCut == false)
+                {
+                    ropeCut = true;
+                }
+            }
+        }
+        /*private void OnCollisionEnter(Collision collision)
         {
             if(collision.gameObject.tag == "Knife")
             {
                 ropeCut = true;
+                this.GetComponent<Rigidbody>().isKinematic = false;
                 // When gravity is switched on - down part will fall
                 if (this.GetComponent<Rigidbody>().useGravity == false)
                 {
-                audioManager.GetComponent<AudioManager>().Play("Rope");
-                this.GetComponent<Rigidbody>().useGravity = true;
+                    audioManager.GetComponent<AudioManager>().Play("Rope");
+                    this.GetComponent<Rigidbody>().useGravity = true;
                 }
-            }
-       
+            }*/
     }
 }
