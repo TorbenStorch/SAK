@@ -19,6 +19,23 @@ public class SelectionButton : MonoBehaviour
     public SteamVR_Action_Boolean selectionMode;
     public UnityEvent triggerPressed;
 
+    // Singlton for adbenture
+    public static SelectionButton selectionButton { set; get; }
+
+    private void Awake()
+    {
+        // Singlton pattern for saving tool menu manager in adventure
+        if (selectionButton == null)
+        {
+            selectionButton = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {

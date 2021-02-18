@@ -26,13 +26,25 @@ public class ReactableIcon : MonoBehaviour
     private bool touched = false; // boolean to show that the pointer is hovering or not
     private GameObject[] icons;// array for icons
 
+    // For selected and not selected mode
     public UnityEvent unselected;
     public UnityEvent selected;
+
+    // For changing size of icon
+    private Vector2 initialSize;
+
+    // For audio
     private GameObject audioManager;
 
     private void Awake()
     {
+        // Assign initial size
+        initialSize = this.gameObject.GetComponent<Image>().rectTransform.sizeDelta;
+
+        // For sound
         audioManager = GameObject.FindGameObjectWithTag("AudioManager");
+
+        // For storing icons in one array
         if (icons == null)
         {
             icons = GameObject.FindGameObjectsWithTag("Icon");
@@ -69,7 +81,7 @@ public class ReactableIcon : MonoBehaviour
             this.gameObject.GetComponent<Image>().rectTransform.sizeDelta = new Vector2(90, 90);
         } else
         {
-            this.gameObject.GetComponent<Image>().rectTransform.sizeDelta = new Vector2(80, 80);
+            this.gameObject.GetComponent<Image>().rectTransform.sizeDelta = initialSize;
         }
     }
     // When trigger was pressed once and pointer is hovering above the icon, the icon is selected.

@@ -16,6 +16,12 @@ public class CutRope : MonoBehaviour
     //note from torben: needed that :)
     [HideInInspector]
     public bool ropeCut = false;
+    private GameObject audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager");
+    }
     //note end
 
     private void OnTriggerEnter(Collider other)
@@ -23,27 +29,31 @@ public class CutRope : MonoBehaviour
         if (other.tag == "Knife")
         {
             this.GetComponent<Rigidbody>().isKinematic = false;
-            this.GetComponent<BoxCollider>().isTrigger = false;
+            this.GetComponent<CapsuleCollider>().isTrigger = false;
             if (this.GetComponent<Rigidbody>().useGravity == false)
             {
                 this.GetComponent<Rigidbody>().useGravity = true;
+                audioManager.GetComponent<AudioManager>().Play("Rope");
+
                 if (ropeCut == false)
                 {
                     ropeCut = true;
                 }
             }
-        }
-        /*private void OnCollisionEnter(Collision collision)
-        {
-            if(collision.gameObject.tag == "Knife")
+            /*private void OnCollisionEnter(Collision collision)
             {
-                ropeCut = true;
-                // When gravity is switched on - down part will fall
-                if (this.GetComponent<Rigidbody>().useGravity == false)
+                if(collision.gameObject.tag == "Knife")
                 {
-                    this.GetComponent<Rigidbody>().useGravity = true;
+                    ropeCut = true;
+                    this.GetComponent<Rigidbody>().isKinematic = false;
+                    // When gravity is switched on - down part will fall
+                    if (this.GetComponent<Rigidbody>().useGravity == false)
+                    {
+                        audioManager.GetComponent<AudioManager>().Play("Rope");
+                        this.GetComponent<Rigidbody>().useGravity = true;
+                    }
                 }
-            }
-       */
+            }*/
+        }
     }
 }

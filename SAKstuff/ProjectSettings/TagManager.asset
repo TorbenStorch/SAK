@@ -18,6 +18,11 @@ TagManager:
   - SmallSAK
   - TMPoint
   - AudioManager
+  - Bottle
+  - Can
+  - Branch
+  - Screw
+  - Rope
   layers:
   - Default
   - TransparentFX

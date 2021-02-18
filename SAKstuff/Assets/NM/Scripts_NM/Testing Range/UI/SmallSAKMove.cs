@@ -64,9 +64,24 @@ public class SmallSAKMove : MonoBehaviour
     public bool adventureStarted = true;
     private GameObject audioManager;
 
+    // For singleton
+    public static SmallSAKMove Instance { set; get; }
+
     // Start is called before the first frame update
     void Awake()
     {
+        // Singleton for adventure
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+
+        // For animation
         anim = GetComponent<Animator>();
         icons = GameObject.FindGameObjectsWithTag("Icon");
         audioManager = GameObject.FindGameObjectWithTag("AudioManager");
@@ -75,6 +90,7 @@ public class SmallSAKMove : MonoBehaviour
     // If trigger was pressed & pointer was above icon, animation starts
     public void StartAnimation()
     {
+        // Reload icons
         if(adventureStarted == true)
         {
             icons = GameObject.FindGameObjectsWithTag("Icon");

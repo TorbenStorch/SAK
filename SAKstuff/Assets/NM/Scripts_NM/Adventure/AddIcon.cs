@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 /// <summary>
 /// P3 Swiss Army Knife project
@@ -15,7 +17,7 @@ using UnityEngine;
 public class AddIcon : MonoBehaviour
 {
     private bool iconsDisabled = false;
-    private bool adventureStarted = true; // if it is true - it was for testing
+    private bool adventureStarted = false; // if it is true - it was for testing
     // Objects that showes changes
     public GameObject rope;
     public GameObject flashlight; // SAK object with script small sak move
@@ -30,14 +32,28 @@ public class AddIcon : MonoBehaviour
     void Start()
     {
         icons = GameObject.FindGameObjectsWithTag("Icon");
+        for (int counter = 0; counter < icons.Length; counter++)
+        {
+            Debug.Log("Icon: " + icons[counter]);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Disable icons, except knife, if the adventure started
+        // Check, if it is Adventure scene
+        Scene scene = SceneManager.GetActiveScene();
+        if(scene.name == "Adventure")
+        {
+            adventureStarted = true;
+        }
+
         if (adventureStarted == true)
         {
+            // Find all objects
+            FindObj();
+
+            // Disable icons, except knife, if the adventure started
             if (iconsDisabled == false)
             {
                 DisableIcons();
@@ -85,11 +101,54 @@ public class AddIcon : MonoBehaviour
         }
     }
 
+    private void FindObj()
+    {
+        // Find rope
+        if (rope == null)
+        {
+            rope = GameObject.FindGameObjectWithTag("Rope");
+        }
+        // Find flashlight
+        if (flashlight == null)
+        {
+            flashlight = GameObject.FindGameObjectWithTag("SmallSAK");
+        }
+        // Screw
+        if (screw == null)
+        {
+            screw = GameObject.FindGameObjectWithTag("Screw");
+        }
+        // Branch
+        if (branch == null)
+        {
+            branch = GameObject.FindGameObjectWithTag("Branch");
+        }
+        // Can
+        if (can == null)
+        {
+            can = GameObject.FindGameObjectWithTag("Can");
+        }
+        // Bottle
+        if (bottle == null)
+        {
+            bottle = GameObject.FindGameObjectWithTag("Bottle");
+        }
+    }
+
     private void DisableIcons()
     {
         for (int counter = 0; counter < icons.Length; counter++)
         {
+            // Activate image for home icon and adventure icon
+            //if(icons[counter].name == "HomeIcon" || icons[counter].name == "AdventureIcon")
+            //{
+                //icons[counter].GetComponent<Image>().enabled = true;
+            //}
+
+            // Disable all icons
             icons[counter].SetActive(false);
+
+            // Except knife
             if (icons[counter].name == "KnifeIcon")
             {
                 icons[counter].SetActive(true);

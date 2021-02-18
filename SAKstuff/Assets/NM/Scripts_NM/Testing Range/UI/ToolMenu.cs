@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// P3 Swiss Army Knife project
@@ -26,25 +27,64 @@ public class ToolMenu : MonoBehaviour
     private bool open = false;
     private GameObject audioManager;
 
+    private GameObject[] icons;
+
     void Awake()
     {
         SwitchOff();
         audioManager = GameObject.FindGameObjectWithTag("AudioManager");
+
+        icons = GameObject.FindGameObjectsWithTag("Icon");
     }
 
     private void SwitchOn()
     {
+        for(int counter = 0; counter < icons.Length; counter++)
+        {
+            icons[counter].GetComponent<Image>().enabled = true;
+            // Special icons for adventure
+            if (icons[counter].name == "HomeIcon" || icons[counter].name == "AdventureIcon")
+            {
+                if (SceneManager.GetActiveScene().name == "Adventure")
+                {
+                    icons[counter].GetComponent<Image>().enabled = true;
+                } else
+                {
+                    icons[counter].GetComponent<Image>().enabled = false;
+                }
+            }
+        }
         iToolMenu.enabled = true;
         iPointerIcon.enabled = true;
-        iKnifeIcon.enabled = true;
+        /*iKnifeIcon.enabled = true;
         iFlashlightIcon.enabled = true;
         iScrewDriverIcon.enabled = true;
         iSawIcon.enabled = true;
         iBottleOpenerIcon.enabled = true;
-        iCanOpenerIcon.enabled = true;
+        iCanOpenerIcon.enabled = true;*/
+        
     }
     private void SwitchOff()
     {
+        icons = GameObject.FindGameObjectsWithTag("Icon"); // Ask if it okay
+        for (int counter = 0; counter < icons.Length; counter++)
+        {
+            icons[counter].GetComponent<Image>().enabled = false;
+            // Special icons for adventure
+            if (icons[counter].name == "HomeIcon" || icons[counter].name == "AdventureIcon")
+            {
+                if (SceneManager.GetActiveScene().name == "Adventure")
+                {
+                    icons[counter].GetComponent<Image>().enabled = true;
+                }
+                else
+                {
+                    icons[counter].GetComponent<Image>().enabled = false;
+                }
+            }
+        }
+        iToolMenu.enabled = false;
+        iPointerIcon.enabled = false;/*
         iToolMenu.enabled = false;
         iPointerIcon.enabled = false;
         iKnifeIcon.enabled = false;
@@ -52,7 +92,7 @@ public class ToolMenu : MonoBehaviour
         iScrewDriverIcon.enabled = false;
         iSawIcon.enabled = false;
         iBottleOpenerIcon.enabled = false;
-        iCanOpenerIcon.enabled = false;
+        iCanOpenerIcon.enabled = false;*/
     }
     // If menu button was pressed, switch on/off the menu tool
     public void Switch()

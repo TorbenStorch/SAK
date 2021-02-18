@@ -16,8 +16,23 @@ public class TMenuOnHand : MonoBehaviour
     private Vector3 toolMenuPos;
     private bool on = false;
 
+    // Singleton for adventure
+    public static TMenuOnHand ToolMenuCanvas { set; get; }
+
     private void Start()
     {
+        // For signleton (helps us to save tool menu, when we go in adventure)
+        if (ToolMenuCanvas == null)
+        {
+            ToolMenuCanvas = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+
+        // Find the point above right hand
         toolMenuPoint = GameObject.FindGameObjectWithTag("TMPoint");
     }
 

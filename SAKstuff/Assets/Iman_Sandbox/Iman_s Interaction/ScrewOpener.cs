@@ -36,7 +36,16 @@ public class ScrewOpener : MonoBehaviour
     {
         if(collision.transform.CompareTag(sakTag))
         {
+            // For audio
             audioManager.GetComponent<AudioManager>().Play("Screw");
+
+            // For adventure
+            if (screwOpened == false)
+            {
+                screwOpened = true;
+            }
+
+            // For screw's movement
             touched = true;
 
             //FindObjectOfType<WoodenPlank>().amount -= 1; // -> if we have more woodenPlanks in the scene that wont work
@@ -62,10 +71,5 @@ public class ScrewOpener : MonoBehaviour
         touched = false;
         GetComponent<Collider>().isTrigger = false;
         GetComponent<Rigidbody>().isKinematic = false;
-        // For adventure
-        if(screwOpened == false)
-        {
-            screwOpened = true;
-        }
     }
 }

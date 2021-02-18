@@ -8,11 +8,22 @@ public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
     public bool playingSound;
+    public static AudioManager audioManager { set; get; }
    
 
     private void Awake()
     {
-
+        // For adventure 
+        if (audioManager == null)
+        {
+            audioManager = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+        // Sound
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
