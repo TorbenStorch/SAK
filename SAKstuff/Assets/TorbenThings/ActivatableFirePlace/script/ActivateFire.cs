@@ -23,6 +23,7 @@ public class ActivateFire : MonoBehaviour
     public GameObject[] branches;
     public GameObject[] logs;
 
+    public bool fireIsOn = false;
 
     private void Start()
     {
@@ -59,6 +60,7 @@ public class ActivateFire : MonoBehaviour
                     {
                         particleSystem.SetActive(true);
                     }
+                    fireIsOn = true;
                 }
 
                 branch.SetActive(false); //deactivate the branch after dropping it into fireplace

@@ -23,6 +23,7 @@ public class goldenSAK : MonoBehaviour
     [SerializeField]
     private float speed;
 
+    public ActivateFire activateFire;
     public bool activateGoldenSAK = false;
 
 
@@ -35,9 +36,10 @@ public class goldenSAK : MonoBehaviour
 
     private void Update()
     {
-        transform.eulerAngles += Vector3.up * Time.deltaTime * (speed*30);
-        if (activateGoldenSAK)
+        //transform.eulerAngles += Vector3.up * Time.deltaTime * (speed*30);
+        if (activateGoldenSAK || activateFire.fireIsOn) //to debug - activateGoldenSAK
         {
+            transform.eulerAngles += Vector3.up * Time.deltaTime * (speed * 30);
             if (transform.position.y <= endPos)
             {
                 transform.position += Vector3.up * Time.deltaTime * speed;

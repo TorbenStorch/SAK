@@ -13,7 +13,11 @@ using UnityEngine;
 public class WoodenPlank : MonoBehaviour
 {
     public GameObject[] screws;
+    [HideInInspector]
     public int amount;
+
+    public GameObject activateTeleport;
+
 
     private void Start()
     {
@@ -26,6 +30,10 @@ public class WoodenPlank : MonoBehaviour
         if(amount == 0)
         {
             gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            if(activateTeleport != null)
+            {
+                activateTeleport.SetActive(true);
+            }
         }
     }
 }
