@@ -33,6 +33,7 @@ public class CutRope : MonoBehaviour
             if (this.GetComponent<Rigidbody>().useGravity == false)
             {
                 this.GetComponent<Rigidbody>().useGravity = true;
+                this.transform.parent.GetComponent<Rigidbody>().useGravity = true;
                 audioManager.GetComponent<AudioManager>().Play("Rope");
 
                 if (ropeCut == false)
