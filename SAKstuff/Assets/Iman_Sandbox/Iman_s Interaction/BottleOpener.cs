@@ -28,6 +28,7 @@ public class BottleOpener : MonoBehaviour
             audioManager.GetComponent<AudioManager>().Play("Bottle");
             this.GetComponent<Rigidbody>().isKinematic = false;
             this.GetComponent<BoxCollider>().isTrigger = false;
+            transform.parent = null;
             if (this.GetComponent<Rigidbody>().useGravity == false)
             {
                 this.GetComponent<Rigidbody>().useGravity = true;

@@ -22,6 +22,13 @@ public class ScrewOpener : MonoBehaviour
     public bool screwOpened = false;
     private GameObject audioManager;
 
+
+    //[Header("Srew Direction")]
+    //public bool directionX;
+    //public bool directionY;
+    //public bool directionZ;
+
+
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("AudioManager");
@@ -32,9 +39,9 @@ public class ScrewOpener : MonoBehaviour
         GetComponent<Rigidbody>().isKinematic = true;
     }
 
-    public void OnTriggerEnter (Collider collision)
+    public void OnTriggerEnter(Collider collision)
     {
-        if(collision.transform.CompareTag(sakTag))
+        if (collision.transform.CompareTag(sakTag))
         {
             // For audio
             audioManager.GetComponent<AudioManager>().Play("Screw");
@@ -49,20 +56,67 @@ public class ScrewOpener : MonoBehaviour
             touched = true;
 
             //FindObjectOfType<WoodenPlank>().amount -= 1; // -> if we have more woodenPlanks in the scene that wont work
-            woodenPlank.GetComponent<WoodenPlank>().amount -= 1; 
+            woodenPlank.GetComponent<WoodenPlank>().amount -= 1;
         }
     }
 
     private void Update()
     {
-        if (transform.position.x >= endPos.x)
+        //if (transform.position.x >= endPos.x)
+        //{
+        //    dropDown();
+        //}
+
+        ////quick fix - no time to make it better :D
+        //if (directionX)
+        //{
+        //    if (transform.localPosition.x >= endPos.x)
+        //    {
+        //        dropDown();
+        //    }
+        //}
+        ////quick fix - no time to make it better :D
+        //if (directionY)
+        //{
+        //    if (transform.localPosition.y >= endPos.y)
+        //    {
+        //        dropDown();
+        //    }
+        //}
+        //quick fix - no time to make it better :D
+        //if (directionZ)
+        //{
+        //    if (transform.localPosition.z >= endPos.z)
+        //    {
+        //        dropDown();
+        //    }
+        //}
+
+        if (transform.localPosition.z >= endPos.z)
         {
             dropDown();
         }
+
         if (touched)
         {
             transform.eulerAngles += new Vector3(0f, 0f, -(rotationSpeed * Time.deltaTime));
-            transform.position += Vector3.right * moveSpeed * Time.deltaTime;
+
+            transform.localPosition += Vector3.forward * moveSpeed * Time.deltaTime;
+
+            ////quick fix - no time to make it better :D
+            //if (directionX)
+            //{
+            //    transform.localPosition += Vector3.right * moveSpeed * Time.deltaTime;
+            //}
+            //if (directionY)
+            //{
+            //    transform.localPosition += Vector3.up * moveSpeed * Time.deltaTime;
+            //}
+            //if (directionZ)
+            //{
+            //    transform.localPosition += Vector3.forward * moveSpeed * Time.deltaTime;
+            //}
+            //transform.position += Vector3.right * moveSpeed * Time.deltaTime;
         }
     }
     void dropDown()

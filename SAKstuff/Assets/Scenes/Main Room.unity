@@ -30535,6 +30535,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2002255073214612289, guid: 40d945db4c4bb8349aba89ec9b2830d9, type: 3}
+      propertyPath: touched
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002255073214612289, guid: 40d945db4c4bb8349aba89ec9b2830d9, type: 3}
+      propertyPath: endPos.z
+      value: 0.00181
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002255073214612289, guid: 40d945db4c4bb8349aba89ec9b2830d9, type: 3}
+      propertyPath: moveSpeed
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562338558926172624, guid: 40d945db4c4bb8349aba89ec9b2830d9, type: 3}
+      propertyPath: endPos.z
+      value: 0.00181
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562338558926172624, guid: 40d945db4c4bb8349aba89ec9b2830d9, type: 3}
+      propertyPath: moveSpeed
+      value: 0.02
+      objectReference: {fileID: 0}
     - target: {fileID: 6562338559142716500, guid: 40d945db4c4bb8349aba89ec9b2830d9, type: 3}
       propertyPath: m_Name
       value: Plank
