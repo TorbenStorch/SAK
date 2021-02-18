@@ -39,16 +39,31 @@ public class goldenSAK : MonoBehaviour
         //transform.eulerAngles += Vector3.up * Time.deltaTime * (speed*30);
         if (activateGoldenSAK || activateFire.fireIsOn) //to debug - activateGoldenSAK
         {
-            transform.eulerAngles += Vector3.up * Time.deltaTime * (speed * 30);
-            if (transform.position.y <= endPos)
-            {
-                transform.position += Vector3.up * Time.deltaTime * speed;
-                transform.localScale += Vector3.one * 0.05f * Time.deltaTime;
-            }
-            else
-            {
-                Invoke("openAnim", 0.5f);
-            }
+            //transform.eulerAngles += Vector3.up * Time.deltaTime * (speed * 30);
+            //if (transform.position.y <= endPos)
+            //{
+            //    transform.position += Vector3.up * Time.deltaTime * speed;
+            //    transform.localScale += Vector3.one * 0.05f * Time.deltaTime;
+            //}
+            //else
+            //{
+            //    Invoke("openAnim", 0.5f);
+            //}
+            Invoke("sakAnim", 3f);
+        }
+    }
+
+    void sakAnim()
+    {
+        transform.eulerAngles += Vector3.up * Time.deltaTime * (speed * 30);
+        if (transform.position.y <= endPos)
+        {
+            transform.position += Vector3.up * Time.deltaTime * speed;
+            transform.localScale += Vector3.one * 0.05f * Time.deltaTime;
+        }
+        else
+        {
+            Invoke("openAnim", 0.5f);
         }
     }
 

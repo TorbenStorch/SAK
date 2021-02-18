@@ -38,7 +38,6 @@ public class ActivateFire : MonoBehaviour
         
     }
 
-
     private void OnTriggerEnter(Collider other)
     {
         foreach (GameObject branch in branches)
@@ -67,5 +66,4 @@ public class ActivateFire : MonoBehaviour
             }
         }
     }
-
 }

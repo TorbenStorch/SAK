@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
 /// P3 Swiss Army Knife project
-/// Namgar Mardvaeva
+/// Namgar Mardvaeva, Torben Storch
 /// Group № 2 (Iman, Namgar, Torben)
 /// Summary: 
 /// 1) Responsible for cutting movement of the rope
@@ -18,6 +18,8 @@ public class CutRope : MonoBehaviour
     public bool ropeCut = false;
     private GameObject audioManager;
 
+    public GameObject longRope;
+
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("AudioManager");
@@ -30,17 +32,20 @@ public class CutRope : MonoBehaviour
         {
             this.GetComponent<Rigidbody>().isKinematic = false;
             this.GetComponent<CapsuleCollider>().isTrigger = false;
+            audioManager.GetComponent<AudioManager>().Play("Rope");
+
+            Invoke("longRopeFall", 0.5f); //make long-rope-part fall down a little later -> looks more like a cut
+
             if (this.GetComponent<Rigidbody>().useGravity == false)
             {
                 this.GetComponent<Rigidbody>().useGravity = true;
-                this.transform.parent.GetComponent<Rigidbody>().useGravity = true;
-                audioManager.GetComponent<AudioManager>().Play("Rope");
-
+                //this.transform.parent.GetComponent<Rigidbody>().useGravity = true;
                 if (ropeCut == false)
                 {
                     ropeCut = true;
                 }
             }
+
             /*private void OnCollisionEnter(Collision collision)
             {
                 if(collision.gameObject.tag == "Knife")
@@ -57,4 +62,11 @@ public class CutRope : MonoBehaviour
             }*/
         }
     }
+
+    void longRopeFall()
+    {
+        longRope.GetComponent<Rigidbody>().isKinematic = false;
+        longRope.GetComponent<Rigidbody>().useGravity = true;
+    }
+
 }

@@ -9632,6 +9632,42 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: AdventureBird
+    clip: {fileID: 8300000, guid: 50e6a49df5046db42bbf3b30d76bc9f7, type: 3}
+    volume: 0.526
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AdventureWater
+    clip: {fileID: 8300000, guid: 50e6a49df5046db42bbf3b30d76bc9f7, type: 3}
+    volume: 0.526
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AdventureForest
+    clip: {fileID: 8300000, guid: 50e6a49df5046db42bbf3b30d76bc9f7, type: 3}
+    volume: 0.526
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AdventureWind
+    clip: {fileID: 8300000, guid: 50e6a49df5046db42bbf3b30d76bc9f7, type: 3}
+    volume: 0.526
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Achivement
+    clip: {fileID: 8300000, guid: 50e6a49df5046db42bbf3b30d76bc9f7, type: 3}
+    volume: 0.526
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: WoodInFire
+    clip: {fileID: 8300000, guid: 50e6a49df5046db42bbf3b30d76bc9f7, type: 3}
+    volume: 0.526
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   playingSound: 0
 --- !u!4 &1715517604
 Transform:
@@ -35394,6 +35430,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 911744221869127533, guid: 9260e4111966b664ebfb555abf5e2a6a, type: 3}
+      propertyPath: handFollowTransform
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8246999248766696466, guid: 9260e4111966b664ebfb555abf5e2a6a, type: 3}
       propertyPath: m_RootOrder
       value: 34

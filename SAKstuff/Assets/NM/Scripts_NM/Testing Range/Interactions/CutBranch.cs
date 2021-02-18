@@ -34,6 +34,7 @@ public class CutBranch : MonoBehaviour
         {
             this.GetComponent<Rigidbody>().isKinematic = false;
             this.GetComponent<BoxCollider>().isTrigger = false;
+            transform.parent = null;
             if (this.GetComponent<Rigidbody>().useGravity == false)
             {
                 audioManager.GetComponent<AudioManager>().Play("Branch");
