@@ -14,10 +14,18 @@ public class BottleOpener : MonoBehaviour
     public bool bottleOpened = false;
 
     private string sakTag = "BottleOpener";
+    private GameObject audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager");
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "BottleOpener")
         {
+            audioManager.GetComponent<AudioManager>().Play("Bottle");
             this.GetComponent<Rigidbody>().isKinematic = false;
             this.GetComponent<BoxCollider>().isTrigger = false;
             if (this.GetComponent<Rigidbody>().useGravity == false)

@@ -15,6 +15,12 @@ public class CanEnable : MonoBehaviour
 
     [HideInInspector]
     public bool canOpened = false;
+    private GameObject audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager");
+    }
 
     void Start()
     {
@@ -26,6 +32,7 @@ public class CanEnable : MonoBehaviour
     {
         if (collision.transform.CompareTag(sakTag))
         {
+            audioManager.GetComponent<AudioManager>().Play("Can");
             canOpen.SetActive(true);
             canClose.SetActive(false);
             // For adventure

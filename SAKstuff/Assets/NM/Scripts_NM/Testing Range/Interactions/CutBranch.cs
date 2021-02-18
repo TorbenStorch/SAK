@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 /// <summary>
 /// P3 Swiss Army Knife project
 /// Namgar Mardvaeva
@@ -15,13 +16,39 @@ public class CutBranch : MonoBehaviour
 {
     [HideInInspector]
     public bool branchCut = false;
+    private GameObject audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager");
+    }
 
     private void Start()
     {
 
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Saw")
+        {
+            this.GetComponent<Rigidbody>().isKinematic = false;
+            this.GetComponent<BoxCollider>().isTrigger = false;
+            if (this.GetComponent<Rigidbody>().useGravity == false)
+            {
+                audioManager.GetComponent<AudioManager>().Play("Branch");
+                this.GetComponent<Rigidbody>().useGravity = true;
+                if (branchCut == false)
+                {
+                    branchCut = true;
+                }
+                // For adventure - campfire
+                GetComponent<Interactable>().enabled = true;
+            }
+        }
+    }
+
+    /*private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Saw")
         {
@@ -29,7 +56,7 @@ public class CutBranch : MonoBehaviour
             this.GetComponent<BoxCollider>().isTrigger = false;
             if (this.GetComponent<Rigidbody>().useGravity == false)
             {
-
+                audioManager.GetComponent<AudioManager>().Play("Branch");
                 this.GetComponent<Rigidbody>().useGravity = true;
                 if (branchCut == false)
                 {
@@ -37,5 +64,5 @@ public class CutBranch : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
 }

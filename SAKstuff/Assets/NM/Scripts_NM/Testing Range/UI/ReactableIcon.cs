@@ -28,10 +28,12 @@ public class ReactableIcon : MonoBehaviour
 
     public UnityEvent unselected;
     public UnityEvent selected;
+    private GameObject audioManager;
 
     private void Awake()
     {
-        if(icons == null)
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager");
+        if (icons == null)
         {
             icons = GameObject.FindGameObjectsWithTag("Icon");
         }
@@ -61,8 +63,9 @@ public class ReactableIcon : MonoBehaviour
     // This method contains different sizes for reacting and non-reacting icon
     private void Reaction()
     {
-        if(touched == true)
+        if (touched == true)
         {
+            //audioManager.GetComponent<AudioManager>().Play("UI Items");
             this.gameObject.GetComponent<Image>().rectTransform.sizeDelta = new Vector2(90, 90);
         } else
         {
@@ -95,6 +98,7 @@ public class ReactableIcon : MonoBehaviour
 
     private void Select()
     {
+        audioManager.GetComponent<AudioManager>().Play("UI Clicking");
         currentIcon = this.GetComponent<Image>();
         currentIcon.sprite = selectedIcon;
         selected.Occured();
