@@ -39,7 +39,7 @@ public class ToolMenu : MonoBehaviour
 
     private void SwitchOn()
     {
-        for(int counter = 0; counter < icons.Length; counter++)
+        /*for(int counter = 0; counter < icons.Length; counter++)
         {
             icons[counter].GetComponent<Image>().enabled = true;
             // Special icons for adventure
@@ -53,20 +53,20 @@ public class ToolMenu : MonoBehaviour
                     icons[counter].GetComponent<Image>().enabled = false;
                 }
             }
-        }
+        }*/
         iToolMenu.enabled = true;
         iPointerIcon.enabled = true;
-        /*iKnifeIcon.enabled = true;
+        iKnifeIcon.enabled = true;
         iFlashlightIcon.enabled = true;
         iScrewDriverIcon.enabled = true;
         iSawIcon.enabled = true;
         iBottleOpenerIcon.enabled = true;
-        iCanOpenerIcon.enabled = true;*/
+        iCanOpenerIcon.enabled = true;
         
     }
     private void SwitchOff()
     {
-        icons = GameObject.FindGameObjectsWithTag("Icon"); // Ask if it okay
+        /*icons = GameObject.FindGameObjectsWithTag("Icon"); // Ask if it okay
         for (int counter = 0; counter < icons.Length; counter++)
         {
             icons[counter].GetComponent<Image>().enabled = false;
@@ -84,7 +84,7 @@ public class ToolMenu : MonoBehaviour
             }
         }
         iToolMenu.enabled = false;
-        iPointerIcon.enabled = false;/*
+        iPointerIcon.enabled = false;*/
         iToolMenu.enabled = false;
         iPointerIcon.enabled = false;
         iKnifeIcon.enabled = false;
@@ -92,7 +92,7 @@ public class ToolMenu : MonoBehaviour
         iScrewDriverIcon.enabled = false;
         iSawIcon.enabled = false;
         iBottleOpenerIcon.enabled = false;
-        iCanOpenerIcon.enabled = false;*/
+        iCanOpenerIcon.enabled = false;
     }
     // If menu button was pressed, switch on/off the menu tool
     public void Switch()

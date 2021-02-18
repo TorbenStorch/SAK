@@ -28,14 +28,13 @@ public class AddIcon : MonoBehaviour
     private bool flashlightReady = false;
     // For an array from all icons
     private GameObject[] icons;
+    // For audio
+    private GameObject audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
         icons = GameObject.FindGameObjectsWithTag("Icon");
-        for (int counter = 0; counter < icons.Length; counter++)
-        {
-            Debug.Log("Icon: " + icons[counter]);
-        }
     }
 
     // Update is called once per frame
@@ -46,6 +45,8 @@ public class AddIcon : MonoBehaviour
         if(scene.name == "Adventure")
         {
             adventureStarted = true;
+            // Add audio manager
+            audioManager = GameObject.FindGameObjectWithTag("AudioManager");
         }
 
         if (adventureStarted == true)
@@ -80,20 +81,20 @@ public class AddIcon : MonoBehaviour
             // Enable saw
             if (screw.GetComponent<ScrewOpener>().screwOpened == true)
             {
-                EnableIcon("SawIcon");
-            }
-            // Enable can opener
-            if (branch.GetComponent<CutBranch>().branchCut == true)
-            {
                 EnableIcon("CanOpenerIcon");
             }
-            // Enable bottle opener
+            // Enable can opener
             if (can.GetComponent<CanEnable>().canOpened == true)
             {
                 EnableIcon("BottleOpenerIcon");
             }
-            // Enable home icon
+            // Enable bottle opener
             if (bottle.GetComponent<BottleOpener>().bottleOpened == true)
+            {
+                EnableIcon("SawIcon");
+            }
+            // Enable home icon
+            if (branch.GetComponent<CutBranch>().branchCut == true)
             {
                 EnableIcon("HomeIcon");
                 EnableIcon("AdventureIcon");
@@ -163,6 +164,7 @@ public class AddIcon : MonoBehaviour
         {
             if (icons[counter].name == name)
             {
+                
                 icons[counter].SetActive(true);
             }
         }

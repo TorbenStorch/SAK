@@ -34,7 +34,10 @@ public class CutRope : MonoBehaviour
             this.GetComponent<CapsuleCollider>().isTrigger = false;
             audioManager.GetComponent<AudioManager>().Play("Rope");
 
-            Invoke("longRopeFall", 0.5f); //make long-rope-part fall down a little later -> looks more like a cut
+            if(longRope != null)
+            {
+                Invoke("longRopeFall", 0.5f); //make long-rope-part fall down a little later -> looks more like a cut
+            }
 
             if (this.GetComponent<Rigidbody>().useGravity == false)
             {
