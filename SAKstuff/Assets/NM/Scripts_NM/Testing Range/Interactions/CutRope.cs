@@ -16,12 +16,6 @@ public class CutRope : MonoBehaviour
     //note from torben: needed that :)
     [HideInInspector]
     public bool ropeCut = false;
-    private GameObject audioManager;
-
-    private void Awake()
-    {
-        audioManager = GameObject.FindGameObjectWithTag("AudioManager");
-    }
     //note end
 
     private void OnTriggerEnter(Collider other)
@@ -29,12 +23,10 @@ public class CutRope : MonoBehaviour
         if (other.tag == "Knife")
         {
             this.GetComponent<Rigidbody>().isKinematic = false;
-            this.GetComponent<CapsuleCollider>().isTrigger = false;
+            this.GetComponent<BoxCollider>().isTrigger = false;
             if (this.GetComponent<Rigidbody>().useGravity == false)
             {
                 this.GetComponent<Rigidbody>().useGravity = true;
-                audioManager.GetComponent<AudioManager>().Play("Rope");
-
                 if (ropeCut == false)
                 {
                     ropeCut = true;
@@ -46,13 +38,12 @@ public class CutRope : MonoBehaviour
             if(collision.gameObject.tag == "Knife")
             {
                 ropeCut = true;
-                this.GetComponent<Rigidbody>().isKinematic = false;
                 // When gravity is switched on - down part will fall
                 if (this.GetComponent<Rigidbody>().useGravity == false)
                 {
-                    audioManager.GetComponent<AudioManager>().Play("Rope");
                     this.GetComponent<Rigidbody>().useGravity = true;
                 }
-            }*/
+            }
+       */
     }
 }

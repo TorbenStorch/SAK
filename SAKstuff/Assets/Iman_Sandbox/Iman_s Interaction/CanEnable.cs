@@ -1,5 +1,5 @@
 ﻿/// P3 Swiss Army Knife project
-/// All
+/// Iman, Torben
 /// Group 2 (Iman, Namgar, Torben)
 /// Summary: 
 
@@ -28,7 +28,27 @@ public class CanEnable : MonoBehaviour
         canOpen.SetActive(false); 
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.CompareTag(sakTag))
+        {
+            // Play audio
+            audioManager.GetComponent<AudioManager>().Play("Can");
+            // Make it "reactable"
+            this.GetComponent<Rigidbody>().isKinematic = false;
+            this.GetComponent<BoxCollider>().isTrigger = false;
+            // Exchange can
+            canOpen.SetActive(true);
+            canClose.SetActive(false);
+            // For adventure
+            if (canOpened == false)
+            {
+                canOpened = true;
+            }
+        }
+    }
+
+    /*private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.CompareTag(sakTag))
         {
@@ -41,5 +61,5 @@ public class CanEnable : MonoBehaviour
                 canOpened = true;
             }
         }
-    }
+    }*/
 }
