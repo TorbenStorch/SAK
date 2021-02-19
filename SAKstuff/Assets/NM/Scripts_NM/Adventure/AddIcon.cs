@@ -138,6 +138,13 @@ public class AddIcon : MonoBehaviour
 
     private void DisableIcons()
     {
+        /**/
+        rope.GetComponent<CutRope>().ropeCut = false;
+        flashlight.GetComponent<SmallSAKMove>().flashlightUsed = false;
+        screw.GetComponent<ScrewOpener>().screwOpened = false;
+        can.GetComponent<CanEnable>().canOpened = false;
+        bottle.GetComponent<BottleOpener>().bottleOpened = false;
+        branch.GetComponent<CutBranch>().branchCut = false;
         for (int counter = 0; counter < icons.Length; counter++)
         {
             // Activate image for home icon and adventure icon
