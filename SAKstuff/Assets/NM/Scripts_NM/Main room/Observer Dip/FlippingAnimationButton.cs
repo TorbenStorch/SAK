@@ -35,10 +35,10 @@ public class FlippingAnimationButton : MonoBehaviour
     }*/
 
     // Is this to access to steam vr?
-    public void OnPress(Handheld hand)
+    /*public void OnPress(Handheld hand)
     {
         Debug.Log("SteamVR Button was pressed");
-    }
+    }*/
 
     // Flipping in VR
     // Add this to object(Button or pedestal) with script "Hover Button": in inspector "On Button Down(Hand)"
